@@ -1,0 +1,50 @@
+.comment {
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 0px;
+    border-top: 1px solid #ddd;
+}
+
+.comment .comment-header {
+    display: flex;
+    font-size: 2em;
+    font-weight: bold;
+    color: #555;
+}
+
+.comment .comment-content {
+    margin-top: 5px;
+    font-size: 1.7em;
+}
+.comment .comment-button{
+    align-self: flex-end;
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.reply {
+    margin-left: 30px;
+    border-left: 2px solid #ccc;
+    padding-left: 10px;
+    font-size: 1.5em;
+}
+.reply .reply-header {
+    display: flex;
+    font-size: 1em;
+    color: #555;
+}
+
+.reply .comment-button{
+    align-self: flex-end;
+    padding: 3px 6px;
+    font-size: 0.7em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}

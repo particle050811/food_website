@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Auto-Generated Content</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .content-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .location-icon {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .location-icon:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="首页.html">首页<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">笔记</a></li>
+                        <li><a href="#">搜索</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="注册.html">用户</a></li>
+                        <li><a href="发布.html">发布</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <h1 class="text-center">Auto-Generated Content</h1>
+    <div class="content-container" id="contentContainer"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            axios.get('https://your-api-endpoint.com/content')
+                .then(function (response) {
+                    const contents = response.data.contents;
+                    const contentContainer = document.getElementById('contentContainer');
+                    contentContainer.innerHTML = '';
+
+                    if (contents.length > 0) {
+                        contents.forEach(content => {
+                            const contentItem = document.createElement('div');
+                            contentItem.classList.add('content-item');
+                            contentItem.innerHTML = `
+                                <h4>${content.title}</h4>
+                                <img src="${content.imageUrl}" alt="${content.title}" class="img-responsive">
+                                <p>${content.description}</p>
+                                <span class="glyphicon glyphicon-map-marker location-icon" onclick="searchInAMap('${content.title}')"></span>
+                            `;
+                            contentContainer.appendChild(contentItem);
+                        });
+                    } else {
+                        contentContainer.innerHTML = '<p>No content available.</p>';
+                    }
+                })
+                .catch(function (error) {
+                    console.error(error);
+                    alert('Failed to load content.');
+                });
+        });
+
+        function searchInAMap(title) {
+            window.open(`https://www.amap.com/search?query=${encodeURIComponent(title)}`);
+        }
+    </script>
+</body>
+
+</html>

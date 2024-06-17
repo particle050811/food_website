@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Post</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        .post {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            max-width: 600px;
+            font-family: Arial, sans-serif;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="post">
+            <img id="post-image" src="" alt="Rabbit" class="img-fluid">
+            <h2 id="post-title" class="mt-3"></h2>
+            <p id="post-content"></p>
+            <div class="d-flex justify-content-between">
+                <button id="likes-button" class="btn btn-primary">赞同</button>
+                <button id="comments-button" class="btn btn-secondary">评论</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="axios/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            axios.get('http://localhost:3000/api/post')
+                .then(response => {
+                    const data = response.data;
+                    document.getElementById('post-title').innerText = data.title;
+                    document.getElementById('post-image').src = data.image;
+                    document.getElementById('post-content').innerText = data.content;
+                    document.getElementById('likes-button').innerText = `赞同 ${data.likes}`;
+                    document.getElementById('comments-button').innerText = `评论 ${data.comments}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments and Replies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .comment-section {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .comment {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .reply {
+            margin-left: 20px;
+            border: 1px solid #eee;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .comment-author, .reply-author {
+            font-weight: bold;
+        }
+        .comment-date, .reply-date {
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="comment-section">
+        <div class="comment">
+            <div class="comment-author">User1</div>
+            <div class="comment-date">June 12, 2024</div>
+            <div class="comment-text">
+                This is the main comment.
+            </div>
+
+            <div class="reply">
+                <div class="reply-author">User2</div>
+                <div class="reply-date">June 12, 2024</div>
+                <div class="reply-text">
+                    This is a reply to the main comment.
+                </div>
+                <div class="reply-author">User3</div>
+                <div class="reply-date">June 12, 2024</div>
+                <div class="reply-text">
+                    This is a reply to the reply.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox .forgot-password {
+    margin-left: auto;
+}
+
+.password-hint {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.form-group {
+    display: block;
+}
+

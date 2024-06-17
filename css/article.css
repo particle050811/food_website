@@ -1,0 +1,57 @@
+.article{
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    color: #555;
+}
+.article .title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+.article .content{
+
+    text-indent: 2em;
+    margin-top: 5px;
+    font-size: 1.7em;
+}
+.article .comment-button{
+    align-self: flex-end;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-interface {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; /* 调整弹窗宽度 */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+
+.close-button, .submit-button {
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button {
+    background-color: red;
+}

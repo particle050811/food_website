@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FoodExchange Platform</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/article.css">
+<!--    <link rel="stylesheet" href="css/Carouselchart.css">-->
+    <style>
+        .carousel-item {
+            height: 32rem;
+            background: #777;
+            color: white;
+            /*更改文字大小*/
+            font-size: 1.5rem;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .carousel-item .container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-bottom: 50px;
+        }
+
+        .custom-hr {
+            border: 1px dotted black;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .post {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .post-content {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .post-actions button {
+            background: none;
+            border: none;
+            color: #007BFF;
+            cursor: pointer;
+        }
+
+        .post-actions button:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .pagination button {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+
+        .pagination button.active {
+            background-color: #007BFF;
+            color: white;
+            border-color: #5bc0de;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+    <div id="carousel-placeholder"></div>
+    <div id="show-container"></div>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="axios/axios.min.js"></script>
+
+    <script>
+        $("#carousel-placeholder").load("flashPhotos.html");
+        $(document).ready(function(){
+            $("#header-placeholder").load("header.html");
+            let token = localStorage.getItem('token');
+            axios.defaults.headers.common['token'] = token;
+        });
+    </script>
+    <script src="js/show.js"></script>
+</body>
+
+</html>

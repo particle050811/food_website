@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FoodExchange Platform</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/box.css"> <!-- 引用独立的CSS文件 -->
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <h1 class="text-center">Welcome to login</h1>
+    <div class="form-container">
+        <form id="loginForm">
+            <div id="form-placeholder"></div>
+            <div class="checkbox">
+                <a href="注册.html" class="forgot-password">Register?</a>
+                <a href="忘记密码.html" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">login</button>
+        </form>
+        <div class="message-container text-center" id="messageContainer"></div>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="axios/axios.min.js"></script>
+    <script>
+        window.enabledFields = ['nameOrPhoneField', 'passwordField1'];
+        $(document).ready(function () {
+            $("#header-placeholder").load("header.html");
+            $("#form-placeholder").load("form.html");
+            $.getScript("js/form.js");
+            $.getScript("js/loginSubmit.js");
+            $.getScript("js/sendEmailCode.js");
+        });
+
+    </script>
+    <script src="js/loginSubmit.js"></script>
+</body>
+
+</html>
