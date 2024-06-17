@@ -7,31 +7,31 @@ async function showPosts(detail) {
         const images=article.images;
         var articleHtml = "";
         for (let i = 0; i < images.length; i++)
-            articleHtml += `<img src="${images[i]}" alt="图片${i+1}" width=100px height=100px>`;
+            articleHtml += `<img src="${images[i]}" alt="图片${i+1}" class="img-responsive" alt="Responsive image">`;
         const articleLink = `./笔记展示.html?id=${article.id}`;
         articleHtml = `
-        <a href="${articleLink}" class="article-link">
-        <div class="article">
-            <div class="title">
-                ${article.title}
+            <a href="${articleLink}" class="article-link">
+            <div class="article">
+                <div class="title">
+                    ${article.title}
+                </div>
+                ${articleHtml}
+                <div class="content">
+                    ${article.content}
+                </div>
             </div>
-            ${articleHtml}
-            <div class="content">
-                ${article.content}
-            </div>
-        </div>
-        </a>
+            </a>
         `;
         showHtml += articleHtml;
     }
     return showHtml;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Document loaded!");
-    document.querySelector('.search-button').addEventListener('click', async function() {
+$(document).ready(function () {
+    document.getElementById('search-button').addEventListener('click', async function() {
+        event.preventDefault();
         console.log("Button clicked!");
-        const detail = document.querySelector('.search-input').value;
+        const detail = document.getElementById('search-input').value;
         console.log("Detail: ", detail);
         if (detail) {
             try {
@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error("Error in showPosts: ", error);
             }
         } else {
-            alert('请输入搜索内容');
+            alert('Please enter search content');
         }
-    }, { passive: true });
+    });
 });
 
 

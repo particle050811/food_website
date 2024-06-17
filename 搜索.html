@@ -6,80 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FoodExchange Platform - Search Results</title>
-<!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="css/information.css"> <!-- 引用独立的CSS文件 -->
-<!--    <link rel="stylesheet" href="css/article.css">-->
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            width: 100%;
-            margin-top: 100px; /* 确保内容不被导航栏遮挡 */
-        }
-        .search-box {
-            display: flex;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 500px;
-            height: 50px;
-            overflow: hidden;
-        }
-        .search-input {
-            border: none;
-            outline: none;
-            padding: 0 15px;
-            flex: 1;
-            font-size: 18px;
-        }
-        .search-button {
-            background-color: #e0e0e0;
-            border: none;
-            outline: none;
-            padding: 0 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .search-button span {
-            font-size: 24px;
-            color: #007bff;
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/information.css">
+    <link rel="stylesheet" href="css/article.css">
+   <style>
+       .search-container{
+           margin: 0 auto;
+           max-width: 600px;
+           padding: 20px;
+       }
+
+
+   </style>
 </head>
 
 <body>
     <div id="header-placeholder"></div>
-
-    <div class="content">
-        <div class="search-box">
-            <input type="text" class="search-input" placeholder="Search food or notes">
-            <button class="search-button">
-                <span>&#128269;</span> <!-- Unicode字符表示的搜索图标 -->
-            </button>
-        </div>
+    <div class="search-container">
+        <form id="searchForm">
+            <div class="form-group-lg" id="searchField"  style="display: flex; align-items: center;">
+                <input type="text" class="form-control" id="search-input" placeholder="Search">
+                <button type="submit" class="btn btn-default" id="search-button">
+                    <img src="/image/搜索.svg" alt="" width="20px" height="32px">
+                </button>
+            </div>
+        </form>
     </div>
     <div id="show-container"></div>
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="axios/axios.min.js"></script>
     <script src="js/search.js"></script>
     <script>
-        $("#header-placeholder").load("header.html");
-        let token = localStorage.getItem('token');
-        axios.defaults.headers.common['token'] = token;
+        $(document).ready(function () {
+            $("#header-placeholder").load("header.html");
+            let token = localStorage.getItem('token');
+            axios.defaults.headers.common['token'] = token;
+        });
     </script>
 </body>
 
