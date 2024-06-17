@@ -120,7 +120,7 @@
                                 ${post.comments.map(comment => `<p>${comment}</p>`).join('')}
                             </div>
                             <div class="comment-box">
-                                <textarea class="form-control" rows="2" placeholder="写下你的评论..." id="comment-${post.id}"></textarea>
+                                <textarea class="information-control" rows="2" placeholder="写下你的评论..." id="comment-${post.id}"></textarea>
                                 <button class="btn btn-secondary" onclick="submitComment(${post.id})">评论</button>
                             </div>
                         `;

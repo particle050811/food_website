@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FoodExchange Platform</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/box.css"> <!-- 引用独立的CSS文件 -->
+    <link rel="stylesheet" href="css/information.css"> <!-- 引用独立的CSS文件 -->
 </head>
 
 
@@ -29,7 +29,7 @@
         window.enabledFields = ['emailField','emailCodeField','passwordField1','passwordField2'];
         $(document).ready(function () {
             $("#header-placeholder").load("header.html");
-            $("#form-placeholder").load("form.html");
+            $("#information-placeholder").load("form.html");
             $.getScript("js/form.js");
             $.getScript("js/resetSubmit.js");
             $.getScript("js/sendEmailCode.js");

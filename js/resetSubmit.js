@@ -58,8 +58,8 @@ function resetPassword() {
             if (response.data.code == 0) {
                 alert(response.data.msg);
             } else {
-                alert('Reset Successful.');
-                window.location.href = 'login.html';
+                //alert('Reset Successful.');
+                window.location.href = '登录.html';
             }
         })
         .catch(function (error) {

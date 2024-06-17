@@ -1,9 +1,9 @@
 
 $(document).ready(function() {
-    form();
+    information_set();
 });
 
-function form() {
+function information_set() {
     const enabledFields = window.enabledFields || [];
     const searchField = document.getElementById('searchField');
     document.querySelectorAll('.form-group').forEach(function (field) {

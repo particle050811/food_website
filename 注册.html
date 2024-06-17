@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FoodExchange Platform</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/box.css"> <!-- 引用独立的CSS文件 -->
+    <link rel="stylesheet" href="css/information.css"> <!-- 引用独立的CSS文件 -->
 </head>
 
 <body>
@@ -15,10 +15,37 @@
     <h1 class="text-center">Welcome to register</h1>
     <div class="form-container">
         <form id="registerForm">
-            <div id="form-placeholder"></div>
+            <div class="form-group" id="usernameField">
+                <label for="exampleInputName">UserName</label>
+                <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+            </div>
+            <div class="form-group" id="emailField">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group" id="phoneField">
+                <label for="exampleInputPhone">Phone Number</label>
+                <input type="text" class="form-control" id="exampleInputPhone" placeholder="Phone number">
+            </div>
+            <div class="form-group" id="passwordField1">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="current-password">
+            </div>
+            <div class="form-group" id="emailCodeField">
+                <label for="exampleInputEmailCode">Email Code</label>
+
+                <div class="input-group">
+                    <div class="col-lg-7 " style="padding-left: 0px;">
+                        <input type="text" class="form-control" id="exampleInputEmailCode" placeholder="Email Code">
+                    </div>
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="sendEmailCode">Get Email Code</button>
+                </span>
+                </div>
+            </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox">Answer our deal
+                    <input type="checkbox">Agree our deal
                 </label>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Register</button>
@@ -30,13 +57,10 @@
     <script>
         $(document).ready(function(){
             $("#header-placeholder").load("header.html");
-            window.enabledFields = ['usernameField', 'emailField','phoneField','passwordField1','emailCodeField'];
-            $("#form-placeholder").load("form.html");
-            $.getScript("js/form.js");
-            $.getScript("js/registerSubmit.js");
-            $.getScript("js/sendEmailCode.js");
         });
     </script>
+    <script src="js/registerSubmit.js"></script>
+    <script src="js/sendEmailCode.js"></script>
 </body>
 
 </html>
