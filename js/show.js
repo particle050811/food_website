@@ -12,23 +12,35 @@ async function showPosts() {
         const images=article.images;
         var articleHtml = "";
         for (let i = 0; i < images.length; i++)
-            articleHtml += `<img src="${images[i]}" alt="图片${i+1}" width=100px height=100px>`;
+            articleHtml += `<img src="${images[i]}" alt="图片${i+1}" class="img-responsive" alt="Responsive image">`;
         const articleLink = `./笔记展示.html?id=${article.id}`;
         articleHtml = `
-        <a href="${articleLink}" class="article-link">
-        <div class="article">
-            <div class="title">
-                ${article.title}
+            <div class="box" onclick="location.href='${articleLink}'">
+                <div class="left" style="width: 40%">
+                    ${articleHtml}
+                </div>
+                <div class="right" style="width: 54%; height: 80%; margin-left: 3%">
+                    <div class="title">
+                        ${article.title}
+                    </div>
+                    <div class="content" style="  display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-line-clamp: 6;
+                        -webkit-box-orient: vertical;"
+                    >
+                        ${article.content}
+                    </div>            
+                </div>
             </div>
-            ${articleHtml}
-            <div class="content">
-                ${article.content}
-            </div>
-        </div>
-        </a>
+        
         `;
         showHtml += articleHtml;
     }
+    showHtml=`
+        <div class=article>
+            ${showHtml}
+        </div>
+    `;
     return showHtml;
 }
 $(document).ready(function() {

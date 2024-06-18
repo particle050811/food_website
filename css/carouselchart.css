@@ -1,0 +1,92 @@
+.carousel-item {
+    height: 60rem;
+    background: #777;
+    color: white;
+    /*更改文字大小*/
+    font-size: 1.5rem;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.carousel-item .container {
+    padding-top: 25rem;
+    width: 800px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.carousel-item .container .title{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+
+}
+.carousel-item .container .content{
+    margin-top: 0.5rem;
+    text-indent: 2em;
+}
+
+.custom-hr {
+    border: 1px dotted black;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.post {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.post-content {
+    font-size: 14px;
+    color: #555;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.post-actions button:hover {
+    text-decoration: underline;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #007BFF;
+    color: white;
+    border-color: #5bc0de;
+}

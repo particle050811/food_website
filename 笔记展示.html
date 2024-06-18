@@ -19,12 +19,15 @@
 
     <div class="comment-interface" id="comment-interface">
         <div class="form-group">
-            <textarea class="form-control" id="comment-text" rows="6" placeholder="write down your comment..."></textarea>
+            <textarea class="form-control" id="comment-text" rows="10" placeholder="write down your comment..." style="resize: none; font-size: medium"></textarea>
         </div>
         <input type="hidden" id="article-id" value="">
         <input type="hidden" id="parent-comment-id" value="">
-        <button class="btn btn-danger close-button" id="close-button">close</button>
-        <button class="btn btn-primary submit-button" id="submit-button">submit</button>
+        <div class="d-flex justify-content-between" style="display: flex; align-items: center;">
+            <button class="btn btn-danger close-button" id="close-button">close</button>
+            <button class="btn btn-primary submit-button" id="submit-button">submit</button>
+        </div>
+
     </div>
 
 

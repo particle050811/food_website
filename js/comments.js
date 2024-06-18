@@ -14,14 +14,17 @@ async function fetchComments() {
             const reply = replies[j];
             const image=reply.photo;
             replyHtml += `
-                    <div class="reply">
-                        <div class="reply-header">
+                    <div class="comment-son">
+                        <div class="comment-header">
                             <img src="${image}" alt="User Image" style="width: 1.5em; height: 1.5em">
-                            <b>${reply.username}&nbsp</b>
-                            <span>reply to</span>
-                            <b>&nbsp${reply.name}</b></div>
-                        <div class="reply-content">${reply.content}</div>
-                        <button class="comment-button" data-reply-id="${reply.id}" data-type="2">Reply</button>
+                            <div>${reply.username}</div>
+                            <div style="font-weight: normal">&nbspreply to&nbsp</div>
+                            <div>${reply.name}</div>
+                        </div>
+                        <div class="comment-cab">
+                            <div class="comment-content">${reply.content}</div>
+                            <button class="comment-button" data-reply-id="${reply.id}" data-type="2">Reply</button>
+                        </div>
                     </div>
                 `;
 
@@ -33,9 +36,11 @@ async function fetchComments() {
                         <img src="${image}" alt="User Image" style="width: 1.5em; height: 1.5em">
                         <div>${comment.username}</div>
                     </div>
-                    <div class="comment-content">${comment.content}</div>
-                    <button class="comment-button" data-reply-id="${comment.id}" data-type="2">Reply</button>
-                    <div class="replies">${replyHtml}</div>
+                    <div class="comment-cab">
+                        <div class="comment-content">${comment.content}</div>
+                        <button class="comment-button" data-reply-id="${comment.id}" data-type="2">Reply</button>
+                    </div>
+                    ${replyHtml}
                 </div>
             `;
     }

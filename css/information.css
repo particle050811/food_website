@@ -4,17 +4,13 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-
+    color: white;
+}
+.text-center{
+    color: white;
 }
 
-.checkbox {
-    display: flex;
-    align-items: center;
-}
 
-.checkbox .forgot-password {
-    margin-left: auto;
-}
 
 
 

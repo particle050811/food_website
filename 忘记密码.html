@@ -17,7 +17,34 @@
 
     <div class="form-container">
         <form id="resetForm">
-            <div id="form-placeholder"></div>
+            <div class="form-group" id="emailField">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group" id="passwordField1">
+                <label for="exampleInputPassword1">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="current-password">
+                </div>
+            </div>
+            <div class="form-group" id="passwordField2">
+                <label for="exampleInputPassword2">Comfirm Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Comfirm Password" autocomplete="current-password">
+                </div>
+            </div>
+            <div class="form-group" id="emailCodeField">
+                <label for="exampleInputEmailCode">Email Code</label>
+
+                <div class="input-group">
+                    <div class="col-lg-7 " style="padding-left: 0px;">
+                        <input type="text" class="form-control" id="exampleInputEmailCode" placeholder="Email Code">
+                    </div>
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="sendEmailCode">Get Email Code</button>
+                </span>
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary btn-block">Reset</button>
         </form>
         <div class="message-container text-center" id="messageContainer"></div>
@@ -26,11 +53,8 @@
     <script src="js/bootstrap.js"></script>
     <script src="axios/axios.min.js"></script>
     <script>
-        window.enabledFields = ['emailField','emailCodeField','passwordField1','passwordField2'];
         $(document).ready(function () {
             $("#header-placeholder").load("header.html");
-            $("#information-placeholder").load("form.html");
-            $.getScript("js/form.js");
             $.getScript("js/resetSubmit.js");
             $.getScript("js/sendEmailCode.js");
         });

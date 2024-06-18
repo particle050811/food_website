@@ -10,41 +10,61 @@ async function showPosts(detail) {
             articleHtml += `<img src="${images[i]}" alt="图片${i+1}" class="img-responsive" alt="Responsive image">`;
         const articleLink = `./笔记展示.html?id=${article.id}`;
         articleHtml = `
-            <a href="${articleLink}" class="article-link">
-            <div class="article">
-                <div class="title">
-                    ${article.title}
+            <div class="box" onclick="location.href='${articleLink}'">
+                <div class="left" style="width: 40%">
+                    ${articleHtml}
                 </div>
-                ${articleHtml}
-                <div class="content">
-                    ${article.content}
+                <div class="right" style="width: 54%; height: 80%; margin-left: 3%">
+                    <div class="title">
+                        ${article.title}
+                    </div>
+                    <div class="content" style="  display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-line-clamp: 6;
+                        -webkit-box-orient: vertical;"
+                    >
+                        ${article.content}
+                    </div>            
                 </div>
             </div>
-            </a>
+        
         `;
         showHtml += articleHtml;
     }
+    showHtml=`
+        <div class=article>
+            ${showHtml}
+        </div>
+    `;
     return showHtml;
 }
-
+async function load(detail){
+    if (detail) {
+        try {
+            const showHtml = await showPosts(detail);
+            console.log("HTML: ", showHtml);
+            document.getElementById('show-container').innerHTML = showHtml;
+        } catch (error) {
+            console.error("Error in showPosts: ", error);
+        }
+    } else {
+        alert('Please enter search content');
+    }
+}
 $(document).ready(function () {
     document.getElementById('search-button').addEventListener('click', async function() {
         event.preventDefault();
         console.log("Button clicked!");
         const detail = document.getElementById('search-input').value;
         console.log("Detail: ", detail);
-        if (detail) {
-            try {
-                const showHtml = await showPosts(detail);
-                console.log("HTML: ", showHtml);
-                document.getElementById('show-container').innerHTML = showHtml;
-            } catch (error) {
-                console.error("Error in showPosts: ", error);
-            }
-        } else {
-            alert('Please enter search content');
-        }
+        load(detail)
     });
+    const detail = window.location.search.split('=')[1].split('&')[0];
+    if (detail){
+        //search-input中填入deatil
+        document.getElementById('search-input').value = detail;
+        load(detail);
+    }
 });
 
 

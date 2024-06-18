@@ -6,13 +6,13 @@ async function fetcharticle() {
     //加载图片;
     //console.log(images);
     for (let i = 0; i < images.length; i++)
-        articleHtml += `<img src="${images[i]}" alt="图片${i+1}" width=400px height=400px>`;
+        articleHtml += `<img src="${images[i]}" alt="图片${i+1}" class="img-responsive" alt="Responsive image">`;
     articleHtml = `
         <div class="article">
+            ${articleHtml}
             <div class="title">
                 ${article.title}
             </div>
-            ${articleHtml}
             <div class="content">
                 ${article.content}
             </div>
